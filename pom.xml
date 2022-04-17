@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.thehandsomeyoni</groupId>
-    <artifactId>BackroomsAPI</artifactId>
+    <artifactId>backroomsapi</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
@@ -88,7 +88,7 @@
         <repository>
             <id>github</id>
             <name>Backrooms API</name>
-            <url>https://maven.pkg.github.com/TheHandsomeYoni/BackroomsAPI</url>
+            <url>https://maven.pkg.github.com/thehandsomeyoni/backroomsapi</url>
         </repository>
     </distributionManagement>
 

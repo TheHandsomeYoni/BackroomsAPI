@@ -3,16 +3,17 @@ package net.thehandsomeyoni.backroomsapi;
 import com.electronwill.nightconfig.core.file.FileConfig;
 import net.thehandsomeyoni.backroomsapi.Managers.EntitiesRegistry;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 
 public final class BackroomsAPI {
 
-    private static Plugin plugin;
+    private static JavaPlugin plugin;
     private static FileConfig tomlFile;
 
-    public BackroomsAPI(Plugin plugin){
+    public BackroomsAPI(JavaPlugin plugin){
         this.plugin = plugin;
         File file = new File(this.plugin.getDataFolder(), "backrooms.toml");
         if(!file.exists()){
