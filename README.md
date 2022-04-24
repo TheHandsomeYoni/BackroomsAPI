@@ -12,3 +12,5 @@ The api is in progress. I'm doing this project on my own, help will be appreciat
 - [ ] Spawning the entities naturally
 - [ ] Store the entity's information (estimation: will be saved in a .toml file)
 - [ ] Creating a wiki (Final step before publishing)
+- [ ] Make a loot generator
+- [ ] Make a loot rarity system
