@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.thehandsomeyoni</groupId>
-    <artifactId>backroomsapi</artifactId>
-    <version>1.0.0</version>
+    <artifactId>backrooms-api</artifactId>
+    <version>ALPHA-1.0.0</version>
     <packaging>jar</packaging>
 
     <name>BackroomsAPI</name>
@@ -61,12 +61,20 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>everything</id>
+            <url>http://repo.citizensnpcs.co/</url>
+        </repository>
+            <repository>
+                <id>OnARandomBox</id>
+                <url>https://repo.onarandombox.com/content/groups/public/</url>
+            </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
+            <artifactId>spigot</artifactId>
             <version>1.12-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
@@ -82,6 +90,13 @@
             <artifactId>core</artifactId>
             <version>3.6.5</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.citizensnpcs</groupId>
+            <artifactId>citizens-main</artifactId>
+            <version>2.0.29-SNAPSHOT</version>
+            <type>jar</type>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
     <distributionManagement>

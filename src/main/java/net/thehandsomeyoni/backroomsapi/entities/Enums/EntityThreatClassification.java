@@ -1,4 +1,4 @@
-package net.thehandsomeyoni.backroomsapi.Enums;
+package net.thehandsomeyoni.backroomsapi.entities.Enums;
 
 /**
  * Defines the class of the entity according to its behaviour and aggressiveness.

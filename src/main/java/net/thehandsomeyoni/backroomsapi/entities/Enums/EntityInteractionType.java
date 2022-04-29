@@ -1,4 +1,4 @@
-package net.thehandsomeyoni.backroomsapi.Enums;
+package net.thehandsomeyoni.backroomsapi.entities.Enums;
 
 public enum EntityInteractionType {
 

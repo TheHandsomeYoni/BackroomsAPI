@@ -1,48 +1,60 @@
 package net.thehandsomeyoni.backroomsapi;
 
-import com.electronwill.nightconfig.core.file.FileConfig;
-import net.thehandsomeyoni.backroomsapi.Managers.EntitiesRegistry;
+import net.citizensnpcs.api.CitizensAPI;
+import net.citizensnpcs.api.npc.NPC;
+import net.citizensnpcs.api.util.MemoryDataKey;
+import net.thehandsomeyoni.backroomsapi.entities.Manager.NPCStorageManager;
+import net.thehandsomeyoni.backroomsapi.storage.StorageManager;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
 
 public final class BackroomsAPI {
+    private Plugin plugin;
+    private File file;
+    private StorageManager storageManager;
+    private NPCStorageManager npcStoageManager;
 
-    private static JavaPlugin plugin;
-    private static FileConfig tomlFile;
-
-    public BackroomsAPI(JavaPlugin plugin){
+    /**
+     * Initializes the API, and all the processes associated.
+     * @param plugin the plugin which uses the API
+     */
+    public BackroomsAPI(Plugin plugin){
         this.plugin = plugin;
-        File file = new File(this.plugin.getDataFolder(), "backrooms.toml");
+        this.npcStoageManager = new NPCStorageManager();
+
+        file = new File(this.plugin.getDataFolder(), "backrooms.toml");
         if(!file.exists()){
             try {
                 file.createNewFile();
-                tomlFile = FileConfig.of(file);
+                this.storageManager = new StorageManager(file);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }else{
-            tomlFile = FileConfig.of(file);
+            this.storageManager = new StorageManager(file);
         }
     }
 
-    public FileConfig getCOnfigurationFile(){
-        return this.tomlFile;
+    public StorageManager getStorageManager(){
+        return storageManager;
     }
 
-    public EntitiesRegistry getEntitiesRegistry(){
-        return new EntitiesRegistry();
+    public MemoryDataKey getNPCStorageManager(){
+        return npcStoageManager.getStorage();
     }
 
-    public static Plugin getPlugin(){
+    public NPC getEntityByID(int id){
+        try{
+            return CitizensAPI.getNPCRegistry().getById(id);
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public Plugin getPlugin(){
         return plugin;
     }
-
-    public static FileConfig getConfigurationFile(){
-        return tomlFile;
-    }
-
-
 }
