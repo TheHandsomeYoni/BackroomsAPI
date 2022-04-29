@@ -7,10 +7,10 @@ The api is in progress. I'm doing this project on my own, help will be appreciat
 # To Do:
 - [x] Make a backrooms entity creator (using CitizensAPI)
 - [x] Make a loot generator using containers
-- [ ] Finish the Entity Registry and management class
+- [x] Finish the Entity Registry and management class
+- [x] Store the entity's information
 - [ ] Make a level creator
 - [ ] Make a level Registry and management class
 - [ ] Spawning the entities naturally
-- [ ] Store the entity's information (estimation: will be saved in a .toml file)
-- [ ] Creating a wiki (Final step before publishing)
 - [ ] Make a loot rarity system
+- [ ] Create a wiki (Final step before publishing)
